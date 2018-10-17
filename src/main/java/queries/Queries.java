@@ -35,7 +35,7 @@ public class Queries {
         }catch (Exception e){e.printStackTrace();}
     }
 
-    public void create(String name, String password) {
+    public void insert(String name, String password) {
         try (Connection connection = connections.connection_to_demo();
              Statement stmt = connection.createStatement())
         {
