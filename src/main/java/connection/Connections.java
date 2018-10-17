@@ -12,7 +12,7 @@ public class Connections {
         }
         java.sql.Connection connection = null;
         try {
-            String URL = "jdbc:mysql://localhost:3306/demo?serverTimezone=UTC";
+            String URL = "jdbc:mysql://localhost:3306/demo?serverTimezone=UTC&useSSL=false";
             String user = "root";
             String password = "111111";
             connection = DriverManager.getConnection(URL, user, password);
