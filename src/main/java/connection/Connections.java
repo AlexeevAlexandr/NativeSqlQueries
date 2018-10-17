@@ -4,13 +4,13 @@ import java.sql.*;
 
 public class Connections {
 
-    public java.sql.Connection connection_to_demo() {
+    public Connection connection_to_demo() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        java.sql.Connection connection = null;
+        Connection connection = null;
         try {
             String URL = "jdbc:mysql://localhost:3306/demo?serverTimezone=UTC&useSSL=false";
             String user = "root";

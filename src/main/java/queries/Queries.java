@@ -1,6 +1,7 @@
 package queries;
 
 import connection.Connections;
+import controller.Controller;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,6 +9,18 @@ import java.sql.Statement;
 
 public class Queries {
     private Connections connections = new Connections();
+
+    public void listTables() {
+        try (Connection connection = connections.connection_to_demo();
+             Statement stmt = connection.createStatement())
+        {
+            stmt.executeQuery("SHOW TABLES");
+            ResultSet rs = stmt.getResultSet();
+            while (rs.next()) {
+                System.out.println("-" + rs.getString("Tables_in_demo"));
+            }
+        }catch (Exception e){e.printStackTrace();}
+    }
 
     public void select() {
         try (java.sql.Connection connection = connections.connection_to_demo();
