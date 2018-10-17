@@ -1,27 +1,44 @@
 package controller;
 
-import commands.ListTables;
-import queries.Queries;
+import commands.*;
 
 import java.util.Scanner;
 
-public class Controller {
-    public static void main(String[] args) {
-        Queries queries = new Queries();
-        String availableCommands = "" +
-                "list - show list of tables\n" +
-                "add - add username and password";
+class Controller {
+
+    private Command [] commands;
+
+    Controller(){
+        this.commands = new Command[]{
+                new Create(),
+                new Select(),
+                new Help(),
+                new ListTebles(),
+                new Unsuported()};
+    }
+
+    void run(){
+        try {
+            doWork();
+        }catch (Exception e){/*do nothing*/}
+    }
+
+    private void doWork() {
         System.out.println("Welcome!");
-        System.out.println("List of commands what you can use:");
-        System.out.println(availableCommands);
-
-        Scanner scanner = new Scanner(System.in);
-        String command = scanner.nextLine();
-
-        switch (command){
-            case ("list"):
+        boolean check = true;
+        while (check) {
+            System.out.println("Enter command or 'help' - for help");
+            Scanner scanner = new Scanner(System.in);
+            String inputCommand = scanner.nextLine().toLowerCase();
+            if (inputCommand.equals("q")) {
+                check = false;
+            }
+            for (Command command : commands) {
+                if (command.canProcess(inputCommand)) {
+                    command.process();
+                    break;
+                }
+            }
         }
-
-
     }
 }
