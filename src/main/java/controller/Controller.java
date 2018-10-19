@@ -1,7 +1,6 @@
 package controller;
 
 import commands.*;
-
 import java.util.Scanner;
 
 class Controller {
@@ -14,6 +13,7 @@ class Controller {
                 new Create(),
                 new Select(),
                 new SpecificSelect(),
+                new SelectByMatchesFound(),
                 new ListTebles(),
                 new Clear(),
                 new Unsuported()
