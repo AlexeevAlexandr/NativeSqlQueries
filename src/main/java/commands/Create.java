@@ -21,12 +21,14 @@ public class Create implements Command{
         while (check) {
             System.out.println("Enter name");
             String name = scanner.nextLine();
+            System.out.println("Enter email");
+            String email = scanner.nextLine();
             System.out.println("Enter password");
             String password = scanner.nextLine();
             try (Connection connection = connections.connection_to_demo();
                  Statement stmt = connection.createStatement())
             {
-                stmt.executeUpdate("INSERT INTO demo (name) VALUES ('" + name + "');");
+                stmt.executeUpdate("INSERT INTO demo (name, email) VALUES ('" + name + "','" + email + "');");
                 stmt.executeUpdate("INSERT INTO demo2 (password) VALUES ('" + password + "');");
                 System.out.println("Successful");
             } catch (Exception e) {

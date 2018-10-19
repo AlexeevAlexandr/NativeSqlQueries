@@ -14,6 +14,7 @@ public class Help implements Command {
                 "help - for help\n" +
                 "list tables - show list of tables\n" +
                 "create - add username and password\n" +
-                "select - show list of users\n");
+                "select - show list of users\n" +
+                "q - exit\n");
     }
 }

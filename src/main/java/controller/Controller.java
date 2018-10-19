@@ -25,13 +25,13 @@ class Controller {
 
     private void doWork() {
         System.out.println("Welcome!");
-        boolean check = true;
-        while (check) {
-            System.out.println("Enter command or 'help' - for help");
+        while (true) {
+            System.out.println("Enter command or 'help' - for help, 'q' - for exit");
             Scanner scanner = new Scanner(System.in);
             String inputCommand = scanner.nextLine().toLowerCase();
             if (inputCommand.equals("q")) {
-                check = false;
+                System.out.println("Good by!");
+                System.exit(0);
             }
             for (Command command : commands) {
                 if (command.canProcess(inputCommand)) {
