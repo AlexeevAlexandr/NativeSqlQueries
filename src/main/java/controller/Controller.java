@@ -10,11 +10,13 @@ class Controller {
 
     Controller(){
         this.commands = new Command[]{
+                new Help(),
                 new Create(),
                 new Select(),
-                new Help(),
                 new ListTebles(),
-                new Unsuported()};
+                new Clear(),
+                new Unsuported()
+        };
     }
 
     void run(){
