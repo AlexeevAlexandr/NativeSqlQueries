@@ -13,6 +13,7 @@ class Controller {
                 new Help(),
                 new Create(),
                 new Select(),
+                new SpecificSelect(),
                 new ListTebles(),
                 new Clear(),
                 new Unsuported()

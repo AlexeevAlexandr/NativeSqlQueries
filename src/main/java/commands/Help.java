@@ -14,6 +14,7 @@ public class Help implements Command {
                 "list tables - show list of tables\n" +
                 "create - add users\n" +
                 "select - show list of users\n" +
+                "select by id - view all info about user by id\n" +
                 "clear - clear all data\n" +
                 "q - exit\n");
     }
