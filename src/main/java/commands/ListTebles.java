@@ -11,7 +11,7 @@ public class ListTebles implements Command {
 
     @Override
     public boolean canProcess(String command) {
-        return command.startsWith("list tables");
+        return command.equals("list tables");
     }
 
     @Override

@@ -12,7 +12,7 @@ class Controller {
                 new Help(),
                 new Create(),
                 new Select(),
-                new SpecificSelect(),
+                new SelectById(),
                 new SelectByMatchesFound(),
                 new ListTebles(),
                 new Clear(),

@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class SpecificSelect implements Command {
+public class SelectById implements Command {
     @Override
     public boolean canProcess(String command) {
         return command.equalsIgnoreCase("select by id");
